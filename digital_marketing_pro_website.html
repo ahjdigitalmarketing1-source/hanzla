@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing Pro | Data-Driven Growth Agency</title>
+    <meta name="description" content="Digital Marketing Pro is a premier digital marketing agency driving exponential business growth through SEO, PPC, Social Media, Content, and Web Design.">
+    <meta name="keywords" content="Digital Marketing, SEO, Facebook Ads, Google Ads, Content Marketing, Web Design, Agency">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Digital Marketing Pro | Scale Your Business Online">
+    <meta property="og:description" content="High-ROI performance marketing for ambitious B2B and E-Commerce brands.">
+    <meta property="og:type" content="website">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            950: '#070b19',
+                            900: '#0b132b',
+                            800: '#1c2541',
+                            700: '#2a3a5e',
+                        },
+                        brand: {
+                            blue: '#3b82f6',
+                            indigo: '#6366f1',
+                            purple: '#8b5cf6',
+                            cyan: '#06b6d4',
+                            emerald: '#10b981'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Embedded Styles -->
+    <style>
+        .glass-card {
+            background: rgba(28, 37, 65, 0.55);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .light .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        .glass-nav {
+            background: rgba(11, 19, 43, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .light .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #60a5fa 0%, #a855f7 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-gradient:hover {
+            background: linear-gradient(135deg, #1d4ed8 0%, #6d28d9 100%);
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.5);
+            transform: translateY(-2px);
+        }
+        /* Hide scrollbars for smooth tabs */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Custom Loader */
+        #preloader {
+            transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-navy-950 text-slate-100 font-sans antialiased selection:bg-brand-indigo selection:text-white dark:bg-navy-950 dark:text-slate-100 light:bg-slate-50 light:text-slate-900 transition-colors duration-300">
+
+    <!-- Page Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[100] flex items-center justify-center bg-navy-950 text-white">
+        <div class="flex flex-col items-center gap-4">
+            <div class="relative w-16 h-16">
+                <div class="absolute inset-0 rounded-full border-4 border-brand-indigo/20"></div>
+                <div class="absolute inset-0 rounded-full border-4 border-brand-indigo border-t-transparent animate-spin"></div>
+                <div class="absolute inset-2 rounded-full border-4 border-brand-purple border-b-transparent animate-spin" style="animation-direction: reverse; animation-duration: 0.8s;"></div>
+            </div>
+            <div class="flex items-center gap-2 text-xl font-bold font-['Plus_Jakarta_Sans'] tracking-wider">
+                <i class="fa-solid fa-chart-line text-brand-blue"></i>
+                <span>Digital Marketing Pro</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Global Toast Container -->
+    <div id="toastContainer" class="fixed top-20 right-5 z-[90] flex flex-col gap-3 pointer-events-none"></div>
+
+    <!-- Header / Navbar -->
+    <header id="mainHeader" class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#home" onclick="navigateTo('home'); return false;" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-blue via-brand-indigo to-brand-purple flex items-center justify-center text-white shadow-lg shadow-brand-indigo/30 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-bolt text-lg"></i>
+                    </div>
+                    <span class="text-xl font-extrabold font-['Plus_Jakarta_Sans'] tracking-tight">
+                        Digital Marketing <span class="text-gradient">Pro</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden lg:flex items-center gap-1 bg-white/5 dark:bg-white/5 light:bg-slate-200/60 p-1.5 rounded-full border border-white/10 light:border-slate-300">
+                    <button onclick="navigateTo('home')" id="nav-home" class="nav-btn px-4 py-2 rounded-full text-sm font-medium transition-all text-white bg-brand-indigo/80">Home</button>
+                    <button onclick="navigateTo('about')" id="nav-about" class="nav-btn px-4 py-2 rounded-full text-sm font-medium transition-all text-slate-300 hover:text-white">About</button>
+                    <button onclick="navigateTo('services')" id="nav-services" class="nav-btn px-4 py-2 rounded-full text-sm font-medium transition-all text-slate-300 hover:text-white">Services</button>
+                    <button onclick="navigateTo('portfolio')" id="nav-portfolio" class="nav-btn px-4 py-2 rounded-full text-sm font-medium transition-all text-slate-300 hover:text-white">Portfolio</button>
+                    <button onclick="navigateTo('pricing')" id="nav-pricing" class="nav-btn px-4 py-2 rounded-full text-sm font-medium transition-all text-slate-300 hover:text-white">Pricing</button>
+                    <button onclick="navigateTo('blog')" id="nav-blog" class="nav-btn px-4 py-2 rounded-full text-sm font-medium transition-all text-slate-300 hover:text-white">Blog</button>
+                    <button onclick="navigateTo('faq')" id="nav-faq" class="nav-btn px-4 py-2 rounded-full text-sm font-medium transition-all text-slate-300 hover:text-white">FAQ</button>
+                    <button onclick="navigateTo('contact')" id="nav-contact" class="nav-btn px-4 py-2 rounded-full text-sm font-medium transition-all text-slate-300 hover:text-white">Contact</button>
+                </nav>
+
+                <!-- Actions -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <!-- Dark/Light Theme Toggle -->
+                    <button id="themeToggleBtn" onclick="toggleTheme()" class="w-10 h-10 rounded-full bg-navy-800 light:bg-slate-200 border border-white/10 light:border-slate-300 flex items-center justify-center text-amber-400 dark:text-amber-300 light:text-slate-700 hover:scale-105 transition-all">
+                        <i id="themeIcon" class="fa-solid fa-moon"></i>
+                    </button>
+                    
+                    <!-- Free Audit Modal Trigger -->
+                    <button onclick="openAuditModal()" class="btn-gradient px-5 py-2.5 rounded-full text-sm font-semibold text-white flex items-center gap-2">
+                        <span>Free Audit</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Hamburger Toggle -->
+                <div class="flex lg:hidden items-center gap-3">
+                    <button onclick="toggleTheme()" class="w-9 h-9 rounded-full bg-navy-800 light:bg-slate-200 border border-white/10 flex items-center justify-center text-amber-400">
+                        <i id="themeIconMobile" class="fa-solid fa-moon text-sm"></i>
+                    </button>
+                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden glass-card border-x-0 border-t-0 border-b border-white/10 px-4 py-6 space-y-3">
+            <div class="grid grid-cols-2 gap-2">
+                <button onclick="navigateTo('home'); toggleMobileMenu()" class="px-4 py-2.5 rounded-xl text-left text-sm font-medium bg-white/5 hover:bg-white/10 text-white">Home</button>
+                <button onclick="navigateTo('about'); toggleMobileMenu()" class="px-4 py-2.5 rounded-xl text-left text-sm font-medium bg-white/5 hover:bg-white/10 text-white">About</button>
+                <button onclick="navigateTo('services'); toggleMobileMenu()" class="px-4 py-2.5 rounded-xl text-left text-sm font-medium bg-white/5 hover:bg-white/10 text-white">Services</button>
+                <button onclick="navigateTo('portfolio'); toggleMobileMenu()" class="px-4 py-2.5 rounded-xl text-left text-sm font-medium bg-white/5 hover:bg-white/10 text-white">Portfolio</button>
+                <button onclick="navigateTo('pricing'); toggleMobileMenu()" class="px-4 py-2.5 rounded-xl text-left text-sm font-medium bg-white/5 hover:bg-white/10 text-white">Pricing</button>
+                <button onclick="navigateTo('blog'); toggleMobileMenu()" class="px-4 py-2.5 rounded-xl text-left text-sm font-medium bg-white/5 hover:bg-white/10 text-white">Blog</button>
+                <button onclick="navigateTo('faq'); toggleMobileMenu()" class="px-4 py-2.5 rounded-xl text-left text-sm font-medium bg-white/5 hover:bg-white/10 text-white">FAQ</button>
+                <button onclick="navigateTo('contact'); toggleMobileMenu()" class="px-4 py-2.5 rounded-xl text-left text-sm font-medium bg-white/5 hover:bg-white/10 text-white">Contact</button>
+            </div>
+            <div class="pt-2">
+                <button onclick="openAuditModal(); toggleMobileMenu()" class="w-100 btn-gradient w-full py-3 rounded-xl font-semibold text-white text-center flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-rocket"></i>
+                    <span>Get Free Audit Report</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER FOR DYNAMIC ROUTING -->
+    <main class="pt-20">
+
+        <!-- PAGE 1: HOME -->
+        <section id="page-home" class="page-view block min-h-screen">
+            <!-- Hero Banner -->
+            <div class="relative overflow-hidden pt-12 pb-24 lg:pt-20 lg:pb-32">
+                <!-- Background Ambient Glows -->
+                <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-indigo/20 rounded-full blur-[140px] pointer-events-none"></div>
+                <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-brand-purple/20 rounded-full blur-[120px] pointer-events-none"></div>
+
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="grid lg:grid-cols-12 gap-12 items-center">
+                        <!-- Left Copy -->
+                        <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-brand-indigo/30 text-brand-blue text-xs sm:text-sm font-semibold">
+                                <span class="flex h-2 w-2 rounded-full bg-brand-emerald animate-ping"></span>
+                                <i class="fa-solid fa-award"></i>
+                                <span>#1 Rated Digital Growth Agency 2026</span>
+                            </div>
+
+                            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight font-['Plus_Jakarta_Sans'] leading-[1.1]">
+                                Grow Your Business with <span class="text-gradient">Digital Marketing</span>
+                            </h1>
+
+                            <p class="text-lg sm:text-xl text-slate-300 light:text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                                Turn searchers into buyers and clicks into profit. We deliver data-driven SEO, performance ad management, and high-converting funnel design built to multiply your revenue.
+                            </p>
+
+                            <!-- CTAs -->
+                            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                                <button onclick="navigateTo('pricing')" class="btn-gradient px-8 py-4 rounded-full font-bold text-lg text-white shadow-xl shadow-brand-indigo/25 flex items-center gap-3">
+                                    <span>Get Started Now</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                                <button onclick="navigateTo('contact')" class="px-8 py-4 rounded-full font-bold text-lg glass-card border border-white/20 hover:bg-white/10 text-white transition-all flex items-center gap-3">
+                                    <i class="fa-regular fa-paper-plane"></i>
+                                    <span>Contact Us</span>
+                                </button>
+                            </div>
+
+                            <!-- Trust Badges -->
+                            <div class="pt-6 border-t border-white/10 flex flex-wrap items-center justify-center lg:justify-start gap-8 text-slate-400 text-sm">
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-emerald"></i>
+                                    <span>Google Certified Premier Partner</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-emerald"></i>
+                                    <span>Meta Managed Agency</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-check text-brand-emerald"></i>
+                                    <span>No Long-Term Lock-in</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Visual Card / Dashboard Graphic -->
+                        <div class="lg:col-span-5 relative">
+                            <div class="glass-card p-6 rounded-3xl relative z-10 shadow-2xl border border-white/15 animate-float">
+                                <!-- Top Bar -->
+                                <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                    </div>
+                                    <span class="text-xs font-mono text-slate-400">campaign_analytics_2026.live</span>
+                                </div>
+
+                                <!-- Metric Highlights -->
+                                <div class="grid grid-cols-2 gap-4 mb-6">
+                                    <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+                                        <p class="text-xs text-slate-400 mb-1">Client Revenue</p>
+                                        <p class="text-2xl font-bold text-brand-emerald">$4,280,920</p>
+                                        <span class="text-xs text-brand-emerald flex items-center gap-1 mt-1">
+                                            <i class="fa-solid fa-arrow-trend-up"></i> +284% YoY
+                                        </span>
+                                    </div>
+                                    <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+                                        <p class="text-xs text-slate-400 mb-1">Avg. Campaign ROAS</p>
+                                        <p class="text-2xl font-bold text-brand-cyan">5.82x</p>
+                                        <span class="text-xs text-brand-blue flex items-center gap-1 mt-1">
+                                            <i class="fa-solid fa-bullseye"></i> Goal: 3.5x
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Mini Bar Chart Visualization -->
+                                <div class="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-3">
+                                    <div class="flex justify-between text-xs text-slate-300">
+                                        <span>Monthly Lead Growth</span>
+                                        <span class="text-brand-purple font-bold">12,850 Leads</span>
+                                    </div>
+                                    <div class="flex items-end gap-2 h-24 pt-4">
+                                        <div class="w-1/6 bg-brand-blue/30 h-1/3 rounded-t-md"></div>
+                                        <div class="w-1/6 bg-brand-blue/40 h-1/2 rounded-t-md"></div>
+                                        <div class="w-1/6 bg-brand-indigo/60 h-2/3 rounded-t-md"></div>
+                                        <div class="w-1/6 bg-brand-indigo/80 h-4/5 rounded-t-md"></div>
+                                        <div class="w-1/6 bg-brand-purple h-full rounded-t-md animate-pulse"></div>
+                                        <div class="w-1/6 bg-brand-emerald h-[92%] rounded-t-md"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Floating Badge -->
+                                <div class="absolute -bottom-6 -left-6 glass-card p-4 rounded-2xl border border-white/20 shadow-xl flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-xl bg-brand-emerald/20 text-brand-emerald flex items-center justify-center text-xl">
+                                        <i class="fa-solid fa-chart-pie"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-slate-400">Conversion Boost</p>
+                                        <p class="text-lg font-bold text-white">+312% Average</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Client Logos Bar -->
+            <div class="py-10 border-y border-white/10 bg-navy-900/50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <p class="text-center text-xs font-semibold uppercase tracking-widest text-slate-400 mb-8">Trusted by 500+ High-Growth Enterprises Worldwide</p>
+                    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center opacity-70 grayscale hover:grayscale-0 transition-all text-center">
+                        <div class="text-xl font-bold font-['Plus_Jakarta_Sans'] text-slate-300"><i class="fa-solid fa-cubes text-brand-blue me-2"></i>NexusCorp</div>
+                        <div class="text-xl font-bold font-['Plus_Jakarta_Sans'] text-slate-300"><i class="fa-solid fa-bolt text-brand-purple me-2"></i>ApexDigital</div>
+                        <div class="text-xl font-bold font-['Plus_Jakarta_Sans'] text-slate-300"><i class="fa-solid fa-globe text-brand-cyan me-2"></i>OmniScale</div>
+                        <div class="text-xl font-bold font-['Plus_Jakarta_Sans'] text-slate-300"><i class="fa-solid fa-shield-halved text-brand-emerald me-2"></i>Vanguard AI</div>
+                        <div class="text-xl font-bold font-['Plus_Jakarta_Sans'] text-slate-300"><i class="fa-solid fa-rocket text-brand-indigo me-2"></i>HyperDrive</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Interactive ROI Calculator -->
+            <div class="py-20">
+                <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="glass-card rounded-3xl p-8 sm:p-12 border border-white/15 relative overflow-hidden">
+                        <div class="text-center max-w-2xl mx-auto mb-10">
+                            <span class="text-brand-cyan font-semibold text-sm uppercase tracking-wider">Interactive Tool</span>
+                            <h2 class="text-3xl font-extrabold font-['Plus_Jakarta_Sans'] mt-2">Estimate Your ROI Growth Potential</h2>
+                            <p class="text-slate-300 text-sm mt-2">Adjust your current monthly marketing spend to calculate forecasted additional revenue through Digital Marketing Pro strategies.</p>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8 items-center">
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="flex justify-between mb-2 text-sm font-semibold">
+                                        <span>Current Monthly Ad Spend:</span>
+                                        <span id="spendDisplay" class="text-brand-cyan font-bold text-lg">$5,000</span>
+                                    </div>
+                                    <input id="spendSlider" type="range" min="1000" max="50000" step="1000" value="5000" oninput="calculateROI()" class="w-full h-3 bg-navy-800 rounded-lg appearance-none cursor-pointer accent-brand-indigo">
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between mb-2 text-sm font-semibold">
+                                        <span>Target Industry:</span>
+                                        <span id="industryDisplay" class="text-brand-purple font-bold">E-Commerce</span>
+                                    </div>
+                                    <select id="industrySelect" onchange="calculateROI()" class="w-full glass-card p-3 rounded-xl border border-white/20 text-white focus:outline-none focus:border-brand-indigo">
+                                        <option value="4.2">E-Commerce (Avg. 4.2x ROAS)</option>
+                                        <option value="5.5">B2B SaaS (Avg. 5.5x ROAS)</option>
+                                        <option value="3.8">Local Services & Real Estate (Avg. 3.8x ROAS)</option>
+                                        <option value="4.8">Healthcare & Professional (Avg. 4.8x ROAS)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Forecast Output Card -->
+                            <div class="p-6 rounded-2xl bg-gradient-to-br from-brand-indigo/30 via-brand-purple/20 to-navy-900 border border-brand-indigo/40 text-center space-y-4">
+                                <p class="text-xs uppercase tracking-wider text-slate-300 font-semibold">Estimated Monthly Revenue Impact</p>
+                                <div id="projectedRevenue" class="text-4xl sm:text-5xl font-extrabold text-brand-emerald">$21,000</div>
+                                <div class="text-xs text-slate-400">
+                                    Projected Net Profit Boost: <span id="projectedProfit" class="text-white font-bold">$16,000 / mo</span>
+                                </div>
+                                <button onclick="openAuditModal()" class="w-full btn-gradient py-3 rounded-xl font-bold text-sm text-white shadow-lg">
+                                    Claim This Forecast Strategy
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Overview Preview -->
+            <div class="py-20 bg-navy-900/30">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <span class="text-brand-blue font-semibold text-sm uppercase tracking-wider">What We Excel At</span>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold font-['Plus_Jakarta_Sans'] mt-2">Full-Spectrum Growth Services</h2>
+                        <p class="text-slate-300 mt-4 text-base">From dominating Google rankings to executing viral social ad campaigns, we engineer full-funnel systems that generate qualified sales.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Card 1 -->
+                        <div class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-blue/50 transition-all group">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-blue/20 text-brand-blue flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3 font-['Plus_Jakarta_Sans']">Search Engine Optimization</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-6">Capture high-intent buyers searching for your exact solutions with technical, content, and authority link-building SEO.</p>
+                            <button onclick="navigateTo('services')" class="text-brand-blue font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                                <span>Explore SEO Solutions</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-purple/50 transition-all group">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-purple/20 text-brand-purple flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-bullhorn"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3 font-['Plus_Jakarta_Sans']">Paid Advertising (PPC)</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-6">Scale profitably on Meta Ads, Google Search, TikTok, and YouTube with precision targeting and continuous A/B creative testing.</p>
+                            <button onclick="navigateTo('services')" class="text-brand-purple font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                                <span>Explore Paid Ads</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-cyan/50 transition-all group">
+                            <div class="w-14 h-14 rounded-2xl bg-brand-cyan/20 text-brand-cyan flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3 font-['Plus_Jakarta_Sans']">Web Design & CRO</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-6">Convert traffic into loyal buyers with ultra-fast, mobile-optimized websites engineered for psychological engagement and sales.</p>
+                            <button onclick="navigateTo('services')" class="text-brand-cyan font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                                <span>Explore Web Design</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-12">
+                        <button onclick="navigateTo('services')" class="btn-gradient px-8 py-3.5 rounded-full font-bold text-white shadow-lg">
+                            View All 10 Digital Marketing Services
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Banner -->
+            <div class="py-16 bg-gradient-to-r from-brand-indigo/30 via-brand-purple/30 to-brand-blue/30 border-y border-white/10">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                        <div>
+                            <p class="text-4xl sm:text-5xl font-extrabold font-['Plus_Jakarta_Sans'] text-white">$85M+</p>
+                            <p class="text-sm text-slate-300 font-medium mt-1">Client Revenue Generated</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl sm:text-5xl font-extrabold font-['Plus_Jakarta_Sans'] text-white">99.4%</p>
+                            <p class="text-sm text-slate-300 font-medium mt-1">Client Retention Rate</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl sm:text-5xl font-extrabold font-['Plus_Jakarta_Sans'] text-white">450+</p>
+                            <p class="text-sm text-slate-300 font-medium mt-1">Successful Campaigns</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl sm:text-5xl font-extrabold font-['Plus_Jakarta_Sans'] text-white">12+</p>
+                            <p class="text-sm text-slate-300 font-medium mt-1">Global Agency Awards</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Client Testimonials -->
+            <div class="py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-2xl mx-auto mb-16">
+                        <span class="text-brand-purple font-semibold text-sm uppercase tracking-wider">Client Reviews</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold font-['Plus_Jakarta_Sans'] mt-2">What Business Founders Say</h2>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between">
+                            <div class="space-y-4">
+                                <div class="text-amber-400 flex gap-1">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-slate-300 text-sm leading-relaxed italic">"Digital Marketing Pro took our e-commerce store from $30k/mo to over $210k/mo in under 7 months. Their Meta Ads creative testing framework is unreal."</p>
+                            </div>
+                            <div class="flex items-center gap-4 pt-6 border-t border-white/10 mt-6">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Sarah Jenkins" class="w-12 h-12 rounded-full object-cover border-2 border-brand-indigo">
+                                <div>
+                                    <p class="font-bold text-white text-sm">Sarah Jenkins</p>
+                                    <p class="text-xs text-slate-400">Founder, GlowAura Beauty</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between">
+                            <div class="space-y-4">
+                                <div class="text-amber-400 flex gap-1">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-slate-300 text-sm leading-relaxed italic">"Our B2B SaaS needed enterprise leads. They ranked us #1 for all our core keywords and built a lead funnel that produces 120+ sales calls every month."</p>
+                            </div>
+                            <div class="flex items-center gap-4 pt-6 border-t border-white/10 mt-6">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Marcus Vance" class="w-12 h-12 rounded-full object-cover border-2 border-brand-purple">
+                                <div>
+                                    <p class="font-bold text-white text-sm">Marcus Vance</p>
+                                    <p class="text-xs text-slate-400">CEO, CloudSync Systems</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between">
+                            <div class="space-y-4">
+                                <div class="text-amber-400 flex gap-1">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-slate-300 text-sm leading-relaxed italic">"Transparent reporting, no fluff, and incredible ROI. Hands down the most professional team we've ever partnered with."</p>
+                            </div>
+                            <div class="flex items-center gap-4 pt-6 border-t border-white/10 mt-6">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Elena Rostova" class="w-12 h-12 rounded-full object-cover border-2 border-brand-cyan">
+                                <div>
+                                    <p class="font-bold text-white text-sm">Elena Rostova</p>
+                                    <p class="text-xs text-slate-400">CMO, Urban Living Real Estate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 2: ABOUT -->
+        <section id="page-about" class="page-view hidden min-h-screen py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-indigo font-semibold text-sm uppercase tracking-wider">Who We Are</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold font-['Plus_Jakarta_Sans'] mt-2">Empowering Ambitious Brands</h1>
+                    <p class="text-slate-300 mt-4 text-base">Founded in 2018, Digital Marketing Pro is built on a single core principle: marketing should always produce measurable financial growth.</p>
+                </div>
+
+                <!-- Mission & Vision Cards -->
+                <div class="grid md:grid-cols-2 gap-8 mb-20">
+                    <div class="glass-card p-8 rounded-3xl border border-white/10">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-blue/20 text-brand-blue flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Our Mission</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">To replace marketing guesswork with data-backed, high-converting growth systems that empower companies to dominate their industries sustainably.</p>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-3xl border border-white/10">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-purple/20 text-brand-purple flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Our Vision</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">To become the global standard for performance marketing transparency, innovation, and client satisfaction by 2030.</p>
+                    </div>
+                </div>
+
+                <!-- Company Timeline -->
+                <div class="mb-20">
+                    <h2 class="text-3xl font-bold text-center mb-12 font-['Plus_Jakarta_Sans']">Our Growth Milestone Timeline</h2>
+                    <div class="space-y-6 max-w-4xl mx-auto">
+                        <div class="glass-card p-6 rounded-2xl border border-white/10 flex items-start gap-6">
+                            <span class="px-4 py-2 rounded-xl bg-brand-blue/20 text-brand-blue font-bold text-sm">2018</span>
+                            <div>
+                                <h4 class="text-lg font-bold">Agency Launch</h4>
+                                <p class="text-slate-300 text-sm mt-1">Founded in New York City with a core team of 3 SEO and PPC specialists.</p>
+                            </div>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl border border-white/10 flex items-start gap-6">
+                            <span class="px-4 py-2 rounded-xl bg-brand-indigo/20 text-brand-indigo font-bold text-sm">2020</span>
+                            <div>
+                                <h4 class="text-lg font-bold">Crossed $25M Client Impact</h4>
+                                <p class="text-slate-300 text-sm mt-1">Expanded service offerings into full-funnel CRO, web engineering, and brand strategy.</p>
+                            </div>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl border border-white/10 flex items-start gap-6">
+                            <span class="px-4 py-2 rounded-xl bg-brand-purple/20 text-brand-purple font-bold text-sm">2023</span>
+                            <div>
+                                <h4 class="text-lg font-bold">Global Expansion</h4>
+                                <p class="text-slate-300 text-sm mt-1">Opened hubs in London and Singapore, managing over $15M annual digital ad spend.</p>
+                            </div>
+                        </div>
+                        <div class="glass-card p-6 rounded-2xl border border-white/10 flex items-start gap-6">
+                            <span class="px-4 py-2 rounded-xl bg-brand-emerald/20 text-brand-emerald font-bold text-sm">2026</span>
+                            <div>
+                                <h4 class="text-lg font-bold">AI Performance Integration</h4>
+                                <p class="text-slate-300 text-sm mt-1">Pioneered predictive audience modeling and automated high-converting ad creative generators.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Section -->
+                <div>
+                    <h2 class="text-3xl font-bold text-center mb-12 font-['Plus_Jakarta_Sans']">Meet Our Leadership Team</h2>
+                    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+                        <div class="glass-card p-6 rounded-3xl border border-white/10 text-center">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="CEO" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-2 border-brand-indigo">
+                            <h4 class="font-bold text-lg">Jessica Sterling</h4>
+                            <p class="text-xs text-brand-indigo font-semibold mb-2">Founder & CEO</p>
+                            <p class="text-xs text-slate-400">Ex-Google Growth Lead with 12+ years performance scaling experience.</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-3xl border border-white/10 text-center">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="CTO" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-2 border-brand-purple">
+                            <h4 class="font-bold text-lg">David Chen</h4>
+                            <p class="text-xs text-brand-purple font-semibold mb-2">Head of SEO & Data</p>
+                            <p class="text-xs text-slate-400">Algorithmic search specialist who managed 10M+ organic visitors.</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-3xl border border-white/10 text-center">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" alt="CMO" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-2 border-brand-cyan">
+                            <h4 class="font-bold text-lg">Sophia Martinez</h4>
+                            <p class="text-xs text-brand-cyan font-semibold mb-2">Director of Paid Media</p>
+                            <p class="text-xs text-slate-400">Managed over $30M profitably on Meta & Google Ad networks.</p>
+                        </div>
+                        <div class="glass-card p-6 rounded-3xl border border-white/10 text-center">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" alt="Design Lead" class="w-24 h-24 rounded-full mx-auto object-cover mb-4 border-2 border-brand-emerald">
+                            <h4 class="font-bold text-lg">Alex Rivera</h4>
+                            <p class="text-xs text-brand-emerald font-semibold mb-2">Lead UX & Creative Director</p>
+                            <p class="text-xs text-slate-400">Award-winning UX designer focused on high-conversion interfaces.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 3: SERVICES -->
+        <section id="page-services" class="page-view hidden min-h-screen py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-blue font-semibold text-sm uppercase tracking-wider">Our Solutions</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold font-['Plus_Jakarta_Sans'] mt-2">10 Tailored Marketing Services</h1>
+                    <p class="text-slate-300 mt-4 text-base">Each service is tailored specifically to hit key metrics: Traffic, Qualified Leads, ROAS, and Customer Lifetime Value.</p>
+                </div>
+
+                <!-- 10 Service Cards Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1: SEO -->
+                    <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between hover:border-brand-blue/50 transition-all">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-brand-blue/20 text-brand-blue flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Search Engine Optimization</h3>
+                            <p class="text-slate-300 text-sm mb-4">Rank #1 on Google for profitable keywords.</p>
+                            <ul class="space-y-2 text-xs text-slate-400 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> On-Page & Technical SEO Audits</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> High-Authority Backlink Acquisition</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Organic Revenue Growth Tracking</li>
+                            </ul>
+                        </div>
+                        <button onclick="openServiceModal('Search Engine Optimization (SEO)', 'Our SEO framework guarantees higher Google visibility through technical fixes, content strategy, and white-hat link acquisition.')" class="btn-gradient w-full py-2.5 rounded-xl font-bold text-xs text-white">Learn More & Get Quote</button>
+                    </div>
+
+                    <!-- Service 2: Social Media Marketing -->
+                    <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between hover:border-brand-indigo/50 transition-all">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-brand-indigo/20 text-brand-indigo flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-hashtag"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Social Media Growth</h3>
+                            <p class="text-slate-300 text-sm mb-4">Build active brand communities across platforms.</p>
+                            <ul class="space-y-2 text-xs text-slate-400 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Content Creation & Reel Scripting</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Community Engagement & DMs</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Viral Trend Execution</li>
+                            </ul>
+                        </div>
+                        <button onclick="openServiceModal('Social Media Marketing', 'Turn followers into customers with consistent storytelling, short-form video content, and proactive community management.')" class="btn-gradient w-full py-2.5 rounded-xl font-bold text-xs text-white">Learn More & Get Quote</button>
+                    </div>
+
+                    <!-- Service 3: Facebook Ads -->
+                    <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between hover:border-brand-purple/50 transition-all">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-brand-purple/20 text-brand-purple flex items-center justify-center text-xl mb-4">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Facebook & Instagram Ads</h3>
+                            <p class="text-slate-300 text-sm mb-4">Laser-targeted performance ads on Meta networks.</p>
+                            <ul class="space-y-2 text-xs text-slate-400 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Custom Creative Design & Testing</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> CAPI & Pixel Setup</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Scale ROAS up to 5x+</li>
+                            </ul>
+                        </div>
+                        <button onclick="openServiceModal('Facebook & Instagram Ads', 'We build high-converting Meta campaign structures with UGC ad creative design and rapid audience testing.')" class="btn-gradient w-full py-2.5 rounded-xl font-bold text-xs text-white">Learn More & Get Quote</button>
+                    </div>
+
+                    <!-- Service 4: Google Ads -->
+                    <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between hover:border-brand-cyan/50 transition-all">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-brand-cyan/20 text-brand-cyan flex items-center justify-center text-xl mb-4">
+                                <i class="fa-brands fa-google"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Google Ads & PPC</h3>
+                            <p class="text-slate-300 text-sm mb-4">Capture active buyer intent on Google Search & Shopping.</p>
+                            <ul class="space-y-2 text-xs text-slate-400 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Negative Keyword Filtering</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Performance Max Campaigns</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Lower Cost-Per-Acquisition</li>
+                            </ul>
+                        </div>
+                        <button onclick="openServiceModal('Google Ads (PPC)', 'Maximize ROI on Search, Shopping, and Display networks by targeting buyers who are ready to purchase right now.')" class="btn-gradient w-full py-2.5 rounded-xl font-bold text-xs text-white">Learn More & Get Quote</button>
+                    </div>
+
+                    <!-- Service 5: YouTube Marketing -->
+                    <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between hover:border-red-500/50 transition-all">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-red-500/20 text-red-400 flex items-center justify-center text-xl mb-4">
+                                <i class="fa-brands fa-youtube"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">YouTube Marketing</h3>
+                            <p class="text-slate-300 text-sm mb-4">Video ad campaigns that command audience attention.</p>
+                            <ul class="space-y-2 text-xs text-slate-400 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Video Scripting & Production</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> YouTube SEO & Thumbnails</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> In-Feed & Bumper Ads</li>
+                            </ul>
+                        </div>
+                        <button onclick="openServiceModal('YouTube Video Marketing', 'Harness the video search engine giant to build trust, demonstrate product value, and capture warm traffic.')" class="btn-gradient w-full py-2.5 rounded-xl font-bold text-xs text-white">Learn More & Get Quote</button>
+                    </div>
+
+                    <!-- Service 6: Email Marketing -->
+                    <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between hover:border-brand-emerald/50 transition-all">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-brand-emerald/20 text-brand-emerald flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-envelope-open-text"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Email & SMS Automation</h3>
+                            <p class="text-slate-300 text-sm mb-4">Turn one-time buyers into lifelong brand advocates.</p>
+                            <ul class="space-y-2 text-xs text-slate-400 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Klaviyo & Mailchimp Flows</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Abandoned Cart Sequences</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> High Open & Click Rates</li>
+                            </ul>
+                        </div>
+                        <button onclick="openServiceModal('Email & SMS Automation', 'Generate 20%-35% of overall business revenue passively through automated email and SMS flows.')" class="btn-gradient w-full py-2.5 rounded-xl font-bold text-xs text-white">Learn More & Get Quote</button>
+                    </div>
+
+                    <!-- Service 7: Content Marketing -->
+                    <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between hover:border-yellow-500/50 transition-all">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-pen-nib"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Content Strategy</h3>
+                            <p class="text-slate-300 text-sm mb-4">Position your business as the recognized industry authority.</p>
+                            <ul class="space-y-2 text-xs text-slate-400 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Articles & Whitepapers</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Lead Magnet Copywriting</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Content Syndication</li>
+                            </ul>
+                        </div>
+                        <button onclick="openServiceModal('Content Strategy', 'Craft high-converting blog posts, whitepapers, and guides that rank natively and build deep brand authority.')" class="btn-gradient w-full py-2.5 rounded-xl font-bold text-xs text-white">Learn More & Get Quote</button>
+                    </div>
+
+                    <!-- Service 8: Web Design -->
+                    <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between hover:border-brand-blue/50 transition-all">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-brand-blue/20 text-brand-blue flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-laptop-code"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Website Design & Dev</h3>
+                            <p class="text-slate-300 text-sm mb-4">Custom landing pages & stores optimized to convert.</p>
+                            <ul class="space-y-2 text-xs text-slate-400 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Responsive Mobile First UI</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Sub-Second Loading Speed</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Conversion Architecture</li>
+                            </ul>
+                        </div>
+                        <button onclick="openServiceModal('Website Design & UX', 'Modern, ultra-responsive web applications and landing pages engineered specifically for sales performance.')" class="btn-gradient w-full py-2.5 rounded-xl font-bold text-xs text-white">Learn More & Get Quote</button>
+                    </div>
+
+                    <!-- Service 9: Graphic Design -->
+                    <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between hover:border-pink-500/50 transition-all">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-palette"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Graphic & Ad Design</h3>
+                            <p class="text-slate-300 text-sm mb-4">Eye-catching visuals that stop scrolling audiences.</p>
+                            <ul class="space-y-2 text-xs text-slate-400 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> High-CTR Ad Creatives</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Social Banners & Collateral</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Motion Graphics & GIFs</li>
+                            </ul>
+                        </div>
+                        <button onclick="openServiceModal('Graphic & Ad Design', 'Stunning graphic design assets designed to stand out in crowded feeds and boost ad click-through rates.')" class="btn-gradient w-full py-2.5 rounded-xl font-bold text-xs text-white">Learn More & Get Quote</button>
+                    </div>
+
+                    <!-- Service 10: Branding -->
+                    <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between hover:border-brand-purple/50 transition-all md:col-span-2 lg:col-span-1">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-brand-purple/20 text-brand-purple flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-gem"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-2">Branding & Positioning</h3>
+                            <p class="text-slate-300 text-sm mb-4">Define a memorable identity that commands premium prices.</p>
+                            <ul class="space-y-2 text-xs text-slate-400 mb-6">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Logo Design & Visual System</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Brand Style Guidelines</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Unique Value Proposition</li>
+                            </ul>
+                        </div>
+                        <button onclick="openServiceModal('Branding & Strategy', 'Comprehensive brand identity kits, messaging guidelines, and market positioning that elevate perception.')" class="btn-gradient w-full py-2.5 rounded-xl font-bold text-xs text-white">Learn More & Get Quote</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 4: PORTFOLIO -->
+        <section id="page-portfolio" class="page-view hidden min-h-screen py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-brand-purple font-semibold text-sm uppercase tracking-wider">Proof of Performance</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold font-['Plus_Jakarta_Sans'] mt-2">Case Studies & Results</h1>
+                    <p class="text-slate-300 mt-4 text-base">Explore real verified outcomes we generated for clients across industries.</p>
+                </div>
+
+                <!-- Filter Controls -->
+                <div class="flex flex-wrap justify-center gap-2 mb-12">
+                    <button onclick="filterPortfolio('all')" class="port-filter-btn px-5 py-2 rounded-full text-sm font-semibold glass-card border border-brand-indigo/50 bg-brand-indigo text-white">All Projects</button>
+                    <button onclick="filterPortfolio('seo')" class="port-filter-btn px-5 py-2 rounded-full text-sm font-semibold glass-card border border-white/10 hover:border-white/30 text-slate-300">SEO Growth</button>
+                    <button onclick="filterPortfolio('ppc')" class="port-filter-btn px-5 py-2 rounded-full text-sm font-semibold glass-card border border-white/10 hover:border-white/30 text-slate-300">PPC & Paid Ads</button>
+                    <button onclick="filterPortfolio('web')" class="port-filter-btn px-5 py-2 rounded-full text-sm font-semibold glass-card border border-white/10 hover:border-white/30 text-slate-300">Web Design</button>
+                </div>
+
+                <!-- Portfolio Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Case Study 1 -->
+                    <div class="port-card seo glass-card rounded-3xl overflow-hidden border border-white/10 group">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="E-Commerce Growth" class="w-100 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-brand-blue text-xs font-bold text-white">SEO Growth</span>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-xl font-bold font-['Plus_Jakarta_Sans']">Nordic Apparels E-Commerce</h3>
+                            <div class="grid grid-cols-2 gap-2 p-3 rounded-2xl bg-white/5 text-center">
+                                <div>
+                                    <p class="text-xs text-slate-400">Organic Traffic</p>
+                                    <p class="text-lg font-bold text-brand-emerald">+340%</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400">Monthly Sales</p>
+                                    <p class="text-lg font-bold text-brand-cyan">$180,000</p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-300">Optimized technical site speed, re-structured product taxonomy, and gained 120+ high-authority fashion blog backlinks.</p>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 2 -->
+                    <div class="port-card ppc glass-card rounded-3xl overflow-hidden border border-white/10 group">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="SaaS PPC" class="w-100 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-brand-purple text-xs font-bold text-white">PPC & Meta Ads</span>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-xl font-bold font-['Plus_Jakarta_Sans']">CloudData B2B Software</h3>
+                            <div class="grid grid-cols-2 gap-2 p-3 rounded-2xl bg-white/5 text-center">
+                                <div>
+                                    <p class="text-xs text-slate-400">Cost-Per-Lead</p>
+                                    <p class="text-lg font-bold text-brand-emerald">-52%</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400">Avg. Campaign ROAS</p>
+                                    <p class="text-lg font-bold text-brand-purple">6.4x</p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-300">Restructured LinkedIn & Google Search campaigns with strict negative match keywords and high-converting trial landing pages.</p>
+                        </div>
+                    </div>
+
+                    <!-- Case Study 3 -->
+                    <div class="port-card web glass-card rounded-3xl overflow-hidden border border-white/10 group">
+                        <div class="relative overflow-hidden h-48">
+                            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="Web Redesign" class="w-100 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-brand-cyan text-xs font-bold text-white">Web Redesign</span>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <h3 class="text-xl font-bold font-['Plus_Jakarta_Sans']">Apex Real Estate Portal</h3>
+                            <div class="grid grid-cols-2 gap-2 p-3 rounded-2xl bg-white/5 text-center">
+                                <div>
+                                    <p class="text-xs text-slate-400">Conversion Rate</p>
+                                    <p class="text-lg font-bold text-brand-emerald">4.8%</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400">Inbound Consults</p>
+                                    <p class="text-lg font-bold text-brand-blue">+210 / mo</p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-slate-300">Complete UI redesign with instant property search, interactive contact forms, and mobile responsive layout.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 5: PRICING -->
+        <section id="page-pricing" class="page-view hidden min-h-screen py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-brand-cyan font-semibold text-sm uppercase tracking-wider">Simple & Transparent</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold font-['Plus_Jakarta_Sans'] mt-2">Investment Plans</h1>
+                    <p class="text-slate-300 mt-4 text-base">Select the marketing package tailored to your company's stage. No hidden fees or surprise contracts.</p>
+                </div>
+
+                <!-- Billing Toggle -->
+                <div class="flex items-center justify-center gap-4 mb-16">
+                    <span class="text-sm font-semibold">Monthly Billing</span>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="pricingToggle" onchange="togglePricing()" class="sr-only peer">
+                        <div class="w-14 h-8 bg-navy-800 border border-white/20 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-brand-indigo after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-brand-purple"></div>
+                    </label>
+                    <span class="text-sm font-semibold flex items-center gap-2">
+                        Annual Billing 
+                        <span class="px-2 py-0.5 rounded-full bg-brand-emerald/20 text-brand-emerald text-xs font-bold">Save 20%</span>
+                    </span>
+                </div>
+
+                <!-- Pricing Cards Grid -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Plan 1: Basic -->
+                    <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Basic Growth</h3>
+                            <p class="text-xs text-slate-400 mb-6">Designed for startups & local businesses wanting momentum.</p>
+                            <div class="mb-6">
+                                <span class="price-val text-4xl font-extrabold text-white" data-monthly="$799" data-annual="$639">$799</span>
+                                <span class="text-slate-400 text-sm">/ month</span>
+                            </div>
+                            <ul class="space-y-3 text-sm text-slate-300 mb-8 border-t border-white/10 pt-6">
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-emerald"></i> On-Page SEO Optimization</li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-emerald"></i> 1 Ad Channel Management (Meta or Google)</li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-emerald"></i> Monthly Strategy Report</li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-emerald"></i> Standard Email Support</li>
+                            </ul>
+                        </div>
+                        <button onclick="openServiceModal('Basic Growth Package', 'Ideal for startups seeking a strong Foundation in SEO or Meta Ads.')" class="w-full py-3 rounded-xl border border-white/20 hover:bg-white/10 text-white font-bold text-sm transition-all">Select Basic</button>
+                    </div>
+
+                    <!-- Plan 2: Standard Pro (Highlighted) -->
+                    <div class="glass-card p-8 rounded-3xl border-2 border-brand-indigo relative flex flex-col justify-between shadow-2xl shadow-brand-indigo/20">
+                        <span class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-brand-indigo to-brand-purple text-xs font-extrabold text-white uppercase tracking-wider">Most Popular</span>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Standard Pro</h3>
+                            <p class="text-xs text-slate-400 mb-6">For scaling brands ready to dominate search & social.</p>
+                            <div class="mb-6">
+                                <span class="price-val text-4xl font-extrabold text-white" data-monthly="$1,899" data-annual="$1,519">$1,899</span>
+                                <span class="text-slate-400 text-sm">/ month</span>
+                            </div>
+                            <ul class="space-y-3 text-sm text-slate-300 mb-8 border-t border-white/10 pt-6">
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-emerald"></i> Full SEO & Link Building Campaign</li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-emerald"></i> Multi-Channel Ads (FB, IG & Google Search)</li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-emerald"></i> A/B Creative Testing & Copywriting</li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-emerald"></i> Bi-Weekly Video Call Review</li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-emerald"></i> CRO Landing Page Audit</li>
+                            </ul>
+                        </div>
+                        <button onclick="openServiceModal('Standard Pro Package', 'Our flagship package designed to scale ad spend profitably while driving organic traffic.')" class="btn-gradient w-full py-3.5 rounded-xl font-extrabold text-sm text-white shadow-lg">Get Started with Pro</button>
+                    </div>
+
+                    <!-- Plan 3: Enterprise -->
+                    <div class="glass-card p-8 rounded-3xl border border-white/10 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Enterprise Scale</h3>
+                            <p class="text-xs text-slate-400 mb-6">Omnichannel aggressive growth for market leaders.</p>
+                            <div class="mb-6">
+                                <span class="price-val text-4xl font-extrabold text-white" data-monthly="$3,999" data-annual="$3,199">$3,999</span>
+                                <span class="text-slate-400 text-sm">/ month</span>
+                            </div>
+                            <ul class="space-y-3 text-sm text-slate-300 mb-8 border-t border-white/10 pt-6">
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-emerald"></i> Omnichannel Ads & Dedicated Media Buyer</li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-emerald"></i> Advanced Technical SEO & Content Engine</li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-emerald"></i> Custom Web Design & Web Funnel Dev</li>
+                                <li class="flex items-center gap-3"><i class="fa-solid fa-check text-brand-emerald"></i> Dedicated Account Manager (Slack Channel)</li>
+                            </ul>
+                        </div>
+                        <button onclick="openServiceModal('Enterprise Scale Package', 'Full dedicated growth team with priority Slack support and unlimited creative iterations.')" class="w-full py-3 rounded-xl border border-white/20 hover:bg-white/10 text-white font-bold text-sm transition-all">Contact Enterprise Team</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 6: BLOG -->
+        <section id="page-blog" class="page-view hidden min-h-screen py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Header -->
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-brand-blue font-semibold text-sm uppercase tracking-wider">Growth Insights</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold font-['Plus_Jakarta_Sans'] mt-2">Marketing Blog & Articles</h1>
+                    <p class="text-slate-300 mt-4 text-base">Master growth strategies, algorithm changes, and creative ad frameworks.</p>
+                </div>
+
+                <!-- Search & Filters -->
+                <div class="max-w-md mx-auto mb-12">
+                    <div class="relative">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input id="blogSearchInput" type="text" onkeyup="filterBlogPosts()" placeholder="Search marketing topics..." class="w-full glass-card pl-12 pr-4 py-3 rounded-2xl border border-white/15 text-white placeholder-slate-400 focus:outline-none focus:border-brand-indigo">
+                    </div>
+                </div>
+
+                <!-- Blog Grid -->
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Post 1 -->
+                    <article class="blog-card glass-card rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between">
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=600&q=80" alt="SEO 2026" class="w-full h-48 object-cover">
+                            <div class="p-6 space-y-3">
+                                <span class="px-3 py-1 rounded-full bg-brand-blue/20 text-brand-blue font-semibold text-xs">SEO Strategy</span>
+                                <h3 class="text-xl font-bold font-['Plus_Jakarta_Sans']">The 2026 Guide to Dominating Search Results</h3>
+                                <p class="text-xs text-slate-300">How to optimize for AI search overviews while scaling traditional Google rankings.</p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="readBlogModal('The 2026 Guide to Dominating Search Results', 'Search engine optimization has evolved rapidly. In this detailed guide, we break down semantic entity mapping, user engagement signals, and technical site architecture that guarantees higher organic visibility...')" class="text-brand-blue font-bold text-xs flex items-center gap-2 hover:gap-3 transition-all">Read Full Article <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </article>
+
+                    <!-- Post 2 -->
+                    <article class="blog-card glass-card rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between">
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1533750349077-cdcd1ec6f6e3?auto=format&fit=crop&w=600&q=80" alt="Meta Ads" class="w-full h-48 object-cover">
+                            <div class="p-6 space-y-3">
+                                <span class="px-3 py-1 rounded-full bg-brand-purple/20 text-brand-purple font-semibold text-xs">Paid Ads</span>
+                                <h3 class="text-xl font-bold font-['Plus_Jakarta_Sans']">5 Ad Creative Hooks That Quadrupled ROAS</h3>
+                                <p class="text-xs text-slate-300">Discover the psychological hooks that hold scroll attention on Instagram Reels and TikTok.</p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="readBlogModal('5 Ad Creative Hooks That Quadrupled ROAS', 'Creative is the new targeting on social ad networks. Learn how problem-agitation hooks, founder stories, and visual contrast tests reduced our average CAC by 40% across 50 e-commerce brands...')" class="text-brand-purple font-bold text-xs flex items-center gap-2 hover:gap-3 transition-all">Read Full Article <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </article>
+
+                    <!-- Post 3 -->
+                    <article class="blog-card glass-card rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between">
+                        <div>
+                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" alt="Conversion Funnels" class="w-full h-48 object-cover">
+                            <div class="p-6 space-y-3">
+                                <span class="px-3 py-1 rounded-full bg-brand-cyan/20 text-brand-cyan font-semibold text-xs">CRO & Web</span>
+                                <h3 class="text-xl font-bold font-['Plus_Jakarta_Sans']">Building High-Converting Landing Pages</h3>
+                                <p class="text-xs text-slate-300">The exact wireframe blueprint we use to achieve 8%+ visitor-to-lead conversion rates.</p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <button onclick="readBlogModal('Building High-Converting Landing Pages', 'A pretty landing page that does not convert is just art. We analyze social proof placement, sticky CTA bars, micro-interactions, and headline structures that maximize profit per click...')" class="text-brand-cyan font-bold text-xs flex items-center gap-2 hover:gap-3 transition-all">Read Full Article <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 7: CONTACT -->
+        <section id="page-contact" class="page-view hidden min-h-screen py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-indigo font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold font-['Plus_Jakarta_Sans'] mt-2">Let's Discuss Your Growth</h1>
+                    <p class="text-slate-300 mt-4 text-base">Fill out the form below or contact our growth strategists directly.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-12">
+                    <!-- Form -->
+                    <div class="lg:col-span-7 glass-card p-8 rounded-3xl border border-white/10">
+                        <h3 class="text-2xl font-bold mb-6 font-['Plus_Jakarta_Sans']">Send Us a Direct Message</h3>
+                        <form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Full Name *</label>
+                                    <input type="text" required placeholder="John Doe" class="w-full glass-card p-3 rounded-xl border border-white/15 text-white placeholder-slate-500 focus:outline-none focus:border-brand-indigo">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Work Email *</label>
+                                    <input type="email" required placeholder="john@company.com" class="w-full glass-card p-3 rounded-xl border border-white/15 text-white placeholder-slate-500 focus:outline-none focus:border-brand-indigo">
+                                </div>
+                            </div>
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Phone Number</label>
+                                    <input type="tel" placeholder="+1 (555) 000-0000" class="w-full glass-card p-3 rounded-xl border border-white/15 text-white placeholder-slate-500 focus:outline-none focus:border-brand-indigo">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Monthly Budget</label>
+                                    <select class="w-full glass-card p-3 rounded-xl border border-white/15 text-white focus:outline-none focus:border-brand-indigo">
+                                        <option>$1,000 - $3,000 / mo</option>
+                                        <option>$3,000 - $10,000 / mo</option>
+                                        <option>$10,000+ / mo</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Project Details & Growth Goals</label>
+                                <textarea rows="4" required placeholder="Tell us about your business, current traffic, and goals..." class="w-full glass-card p-3 rounded-xl border border-white/15 text-white placeholder-slate-500 focus:outline-none focus:border-brand-indigo"></textarea>
+                            </div>
+                            <button type="submit" class="btn-gradient w-full py-4 rounded-xl font-bold text-white shadow-xl flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Submit Request</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Details & Map Embed -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="glass-card p-8 rounded-3xl border border-white/10 space-y-6">
+                            <h3 class="text-xl font-bold font-['Plus_Jakarta_Sans']">Agency Headquarters</h3>
+                            
+                            <div class="space-y-4 text-sm text-slate-300">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-brand-blue/20 text-brand-blue flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-white">New York HQ</p>
+                                        <p class="text-xs text-slate-400">100 Market Street, Suite 400, New York, NY 10001</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-brand-emerald/20 text-brand-emerald flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-white">Email Us</p>
+                                        <p class="text-xs text-slate-400">hello@digitalmarketingpro.com</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-brand-purple/20 text-brand-purple flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-white">Direct Phone</p>
+                                        <p class="text-xs text-slate-400">+1 (800) 555-4769</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- WhatsApp Direct Button -->
+                            <a href="https://wa.me/1234567890" target="_blank" class="flex items-center justify-center gap-3 p-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all shadow-lg">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                <span>Instant WhatsApp Chat</span>
+                            </a>
+                        </div>
+
+                        <!-- Map Preview -->
+                        <div class="glass-card rounded-3xl overflow-hidden border border-white/10 h-52">
+                            <iframe class="w-full h-full border-0 grayscale opacity-80 hover:opacity-100 transition-opacity" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.217676757621!2d-73.98784842342526!3d40.74844097138734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9a31f32a7%3A0xb535939da12f1583!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 8: FAQ -->
+        <section id="page-faq" class="page-view hidden min-h-screen py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Header -->
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-purple font-semibold text-sm uppercase tracking-wider">Help Center</span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold font-['Plus_Jakarta_Sans'] mt-2">Frequently Asked Questions</h1>
+                </div>
+
+                <!-- Accordion Items -->
+                <div class="space-y-4">
+                    <div class="glass-card rounded-2xl border border-white/10 overflow-hidden">
+                        <button onclick="toggleFaq('faq-1')" class="w-full p-6 text-left flex justify-between items-center font-bold text-lg">
+                            <span>How quickly will we see results from our campaigns?</span>
+                            <i id="icon-faq-1" class="fa-solid fa-chevron-down text-brand-indigo transition-transform"></i>
+                        </button>
+                        <div id="faq-1" class="hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-4">
+                            Paid ad campaigns (Google Search, Meta Ads) begin generating clicks and leads within 24-48 hours of launch. Search Engine Optimization (SEO) compounds over time, with major organic revenue increases typically occurring between months 3 and 6.
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl border border-white/10 overflow-hidden">
+                        <button onclick="toggleFaq('faq-2')" class="w-full p-6 text-left flex justify-between items-center font-bold text-lg">
+                            <span>Do you require long-term contracts?</span>
+                            <i id="icon-faq-2" class="fa-solid fa-chevron-down text-brand-indigo transition-transform"></i>
+                        </button>
+                        <div id="faq-2" class="hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-4">
+                            No! We offer flexible month-to-month contracts because we believe our performance should earn your business every single month.
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl border border-white/10 overflow-hidden">
+                        <button onclick="toggleFaq('faq-3')" class="w-full p-6 text-left flex justify-between items-center font-bold text-lg">
+                            <span>How do I track performance and ROI?</span>
+                            <i id="icon-faq-3" class="fa-solid fa-chevron-down text-brand-indigo transition-transform"></i>
+                        </button>
+                        <div id="faq-3" class="hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-4">
+                            You get access to a live 24/7 client dashboard connecting Google Analytics 4, Meta CAPI, and your CRM. Plus, you will have bi-weekly video call check-ins with your dedicated growth strategist.
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl border border-white/10 overflow-hidden">
+                        <button onclick="toggleFaq('faq-4')" class="w-full p-6 text-left flex justify-between items-center font-bold text-lg">
+                            <span>What ad budgets do you recommend?</span>
+                            <i id="icon-faq-4" class="fa-solid fa-chevron-down text-brand-indigo transition-transform"></i>
+                        </button>
+                        <div id="faq-4" class="hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-4">
+                            We work with ad budgets ranging from $1,500/month up to $100,000+/month. During our free audit call, we will recommend the optimal initial test budget based on your industry CAC.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 9: PRIVACY POLICY -->
+        <section id="page-privacy" class="page-view hidden min-h-screen py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="glass-card p-8 sm:p-12 rounded-3xl border border-white/10 space-y-6">
+                    <h1 class="text-3xl font-bold font-['Plus_Jakarta_Sans']">Privacy Policy</h1>
+                    <p class="text-xs text-slate-400">Last updated: August 2, 2026</p>
+                    
+                    <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
+                        <h3 class="text-lg font-bold text-white">1. Information Collection</h3>
+                        <p>Digital Marketing Pro respects your privacy. We collect information you voluntarily provide through form submissions, newsletter subscriptions, or direct consultations.</p>
+                        
+                        <h3 class="text-lg font-bold text-white">2. Use of Information</h3>
+                        <p>We use collected data solely to deliver marketing services, generate audit reports, and communicate strategy updates. We never sell your personal data to third parties.</p>
+
+                        <h3 class="text-lg font-bold text-white">3. Cookies & Analytics</h3>
+                        <p>Our website utilizes standard session cookies and analytical pixels to optimize user experience and measure traffic patterns anonymously.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 10: TERMS & CONDITIONS -->
+        <section id="page-terms" class="page-view hidden min-h-screen py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="glass-card p-8 sm:p-12 rounded-3xl border border-white/10 space-y-6">
+                    <h1 class="text-3xl font-bold font-['Plus_Jakarta_Sans']">Terms & Conditions</h1>
+                    <p class="text-xs text-slate-400">Last updated: August 2, 2026</p>
+                    
+                    <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
+                        <h3 class="text-lg font-bold text-white">1. Client Services Agreement</h3>
+                        <p>By engaging Digital Marketing Pro, client agrees to the terms specified in their customized campaign scope of work.</p>
+                        
+                        <h3 class="text-lg font-bold text-white">2. Intellectual Property</h3>
+                        <p>All ad creatives, landing page designs, and custom copy developed during active retainer periods become the exclusive property of the client upon full payment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 11: 404 PAGE -->
+        <section id="page-404" class="page-view hidden min-h-screen py-20 text-center flex items-center justify-center">
+            <div class="max-w-lg mx-auto px-4">
+                <div class="glass-card p-12 rounded-3xl border border-white/10 space-y-6">
+                    <div class="text-7xl font-extrabold font-['Plus_Jakarta_Sans'] text-gradient">404</div>
+                    <h2 class="text-2xl font-bold">Page Not Found</h2>
+                    <p class="text-sm text-slate-300">The digital strategy page you were looking for doesn't exist or has moved.</p>
+                    <button onclick="navigateTo('home')" class="btn-gradient px-6 py-3 rounded-full font-bold text-sm text-white">
+                        Return to Homepage
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="mt-20 border-t border-white/10 bg-navy-900/60 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Newsletter Card -->
+            <div class="glass-card p-8 sm:p-12 rounded-3xl border border-white/15 mb-16 text-center max-w-4xl mx-auto">
+                <h3 class="text-2xl sm:text-3xl font-extrabold font-['Plus_Jakarta_Sans'] mb-2">Subscribe to Weekly Marketing Intel</h3>
+                <p class="text-slate-300 text-sm mb-6">Join 15,000+ marketers receiving proven ad frameworks and growth news every Tuesday.</p>
+                <form onsubmit="handleNewsletterSubmit(event)" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+                    <input type="email" required placeholder="Enter work email..." class="flex-1 glass-card px-4 py-3 rounded-full border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-brand-indigo text-sm">
+                    <button type="submit" class="btn-gradient px-8 py-3 rounded-full font-bold text-sm text-white shrink-0">
+                        Join Free
+                    </button>
+                </form>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12 text-sm">
+                <div class="col-span-2 space-y-4">
+                    <div class="flex items-center gap-2 text-xl font-bold font-['Plus_Jakarta_Sans']">
+                        <i class="fa-solid fa-bolt text-brand-blue"></i>
+                        <span>Digital Marketing Pro</span>
+                    </div>
+                    <p class="text-xs text-slate-400 max-w-sm leading-relaxed">Data-backed search, paid advertising, and web engineering systems engineered to turn audience attention into measurable revenue growth.</p>
+                    <div class="flex items-center gap-3 text-slate-400">
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-blue hover:text-white transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-cyan hover:text-white transition-all"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-indigo hover:text-white transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-pink-500 hover:text-white transition-all"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="font-bold text-white mb-4">Core Pages</p>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="#home" onclick="navigateTo('home'); return false;" class="hover:text-white">Home</a></li>
+                        <li><a href="#about" onclick="navigateTo('about'); return false;" class="hover:text-white">About Us</a></li>
+                        <li><a href="#services" onclick="navigateTo('services'); return false;" class="hover:text-white">Services</a></li>
+                        <li><a href="#portfolio" onclick="navigateTo('portfolio'); return false;" class="hover:text-white">Portfolio</a></li>
+                        <li><a href="#pricing" onclick="navigateTo('pricing'); return false;" class="hover:text-white">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="font-bold text-white mb-4">Resources</p>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="#blog" onclick="navigateTo('blog'); return false;" class="hover:text-white">Marketing Blog</a></li>
+                        <li><a href="#faq" onclick="navigateTo('faq'); return false;" class="hover:text-white">FAQ</a></li>
+                        <li><a href="#contact" onclick="navigateTo('contact'); return false;" class="hover:text-white">Contact Us</a></li>
+                        <li><a href="#" onclick="openAuditModal(); return false;" class="hover:text-white">Free Audit</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="font-bold text-white mb-4">Legal</p>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><a href="#privacy" onclick="navigateTo('privacy'); return false;" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#terms" onclick="navigateTo('terms'); return false;" class="hover:text-white">Terms & Conditions</a></li>
+                        <li><a href="#404" onclick="navigateTo('404'); return false;" class="hover:text-white">404 Demo View</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 text-center text-xs text-slate-400 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>&copy; 2026 Digital Marketing Pro. All Rights Reserved.</p>
+                <p>Designed with Glassmorphic UI/UX for High Performance.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Widgets -->
+    <!-- Back To Top Button -->
+    <button id="backToTopBtn" onclick="scrollToTop()" class="fixed bottom-6 left-6 z-40 w-12 h-12 rounded-full glass-card border border-white/20 text-white flex items-center justify-center shadow-2xl transition-all duration-300 opacity-0 pointer-events-none hover:scale-110">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Floating WhatsApp Action -->
+    <a href="https://wa.me/1234567890" target="_blank" class="fixed bottom-6 right-20 z-40 w-12 h-12 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Floating Live Chat Trigger -->
+    <button onclick="toggleLiveChat()" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full btn-gradient text-white flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
+        <i class="fa-solid fa-comments text-xl"></i>
+    </button>
+
+    <!-- Simulated Live Chat Modal Window -->
+    <div id="liveChatWidget" class="fixed bottom-22 right-6 z-50 w-80 sm:w-96 glass-card rounded-3xl border border-white/20 shadow-2xl hidden flex-col overflow-hidden transition-all">
+        <!-- Chat Header -->
+        <div class="p-4 bg-brand-indigo flex items-center justify-between text-white">
+            <div class="flex items-center gap-3">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" class="w-8 h-8 rounded-full object-cover">
+                    <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border border-white"></span>
+                </div>
+                <div>
+                    <p class="font-bold text-xs">Growth Assistant</p>
+                    <p class="text-[10px] text-brand-cyan">Online & Ready to Help</p>
+                </div>
+            </div>
+            <button onclick="toggleLiveChat()" class="text-white hover:text-slate-200"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <!-- Chat Body -->
+        <div id="chatBody" class="p-4 h-64 overflow-y-auto space-y-3 text-xs">
+            <div class="bg-white/10 p-3 rounded-2xl rounded-tl-none max-w-[85%] text-slate-200">
+                Hi there! 👋 Looking to increase your website leads or scale ad ROI? Ask me anything!
+            </div>
+        </div>
+
+        <!-- Chat Input -->
+        <form onsubmit="handleChatSend(event)" class="p-2 border-t border-white/10 flex gap-2">
+            <input id="chatInput" type="text" placeholder="Type a message..." class="flex-1 bg-white/5 px-3 py-2 rounded-xl text-xs text-white focus:outline-none">
+            <button type="submit" class="btn-gradient px-3 py-2 rounded-xl text-white text-xs"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+    </div>
+
+    <!-- Free Audit Request Modal -->
+    <div id="auditModal" class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="glass-card max-w-lg w-full rounded-3xl border border-white/20 p-8 relative space-y-6">
+            <button onclick="closeAuditModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center">
+                <span class="text-brand-cyan text-xs font-bold uppercase tracking-wider">Zero Risk Consultation</span>
+                <h3 class="text-2xl font-extrabold font-['Plus_Jakarta_Sans'] mt-1">Claim Free Marketing Audit</h3>
+                <p class="text-xs text-slate-300 mt-2">Our senior strategists will review your competitors, technical SEO, and ad account setup free of charge.</p>
+            </div>
+
+            <form onsubmit="handleAuditSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Company Website URL *</label>
+                    <input type="url" required placeholder="https://yourwebsite.com" class="w-full glass-card p-3 rounded-xl border border-white/15 text-white placeholder-slate-500 focus:outline-none focus:border-brand-indigo text-xs">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Your Name *</label>
+                    <input type="text" required placeholder="Sarah Jenkins" class="w-full glass-card p-3 rounded-xl border border-white/15 text-white placeholder-slate-500 focus:outline-none focus:border-brand-indigo text-xs">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Work Email *</label>
+                    <input type="email" required placeholder="sarah@company.com" class="w-full glass-card p-3 rounded-xl border border-white/15 text-white placeholder-slate-500 focus:outline-none focus:border-brand-indigo text-xs">
+                </div>
+                <button type="submit" class="btn-gradient w-full py-3.5 rounded-xl font-bold text-sm text-white shadow-xl">
+                    Generate My Audit Report
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Generic Service / Article Detail Modal -->
+    <div id="detailModal" class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="glass-card max-w-2xl w-full rounded-3xl border border-white/20 p-8 relative space-y-6">
+            <button onclick="closeDetailModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 id="modalTitle" class="text-2xl font-bold font-['Plus_Jakarta_Sans']"></h3>
+            <p id="modalContent" class="text-sm text-slate-300 leading-relaxed"></p>
+            <div class="pt-4 flex gap-4">
+                <button onclick="closeDetailModal(); navigateTo('contact');" class="btn-gradient px-6 py-2.5 rounded-xl text-xs font-bold text-white">Book Strategy Call</button>
+                <button onclick="closeDetailModal()" class="px-6 py-2.5 rounded-xl border border-white/20 text-xs font-bold text-white hover:bg-white/10">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Embedded Interactive JavaScript Logic -->
+    <script>
+        // Page Router Setup
+        const pages = ['home', 'about', 'services', 'portfolio', 'pricing', 'blog', 'contact', 'faq', 'privacy', 'terms', '404'];
+
+        function navigateTo(pageId) {
+            if (!pages.includes(pageId)) pageId = '404';
+
+            // Hide all page views
+            document.querySelectorAll('.page-view').forEach(view => {
+                view.classList.add('hidden');
+                view.classList.remove('block');
+            });
+
+            // Show selected view
+            const selectedPage = document.getElementById(`page-${pageId}`);
+            if (selectedPage) {
+                selectedPage.classList.remove('hidden');
+                selectedPage.classList.add('block');
+            }
+
+            // Update Active Nav Buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-indigo/80', 'text-white');
+                btn.classList.add('text-slate-300');
+            });
+
+            const activeBtn = document.getElementById(`nav-${pageId}`);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-brand-indigo/80', 'text-white');
+                activeBtn.classList.remove('text-slate-300');
+            }
+
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Update hash without jump
+            history.pushState(null, null, `#${pageId}`);
+        }
+
+        // Initialize Router on Hash Change / Load
+        window.addEventListener('load', () => {
+            // Hide Preloader
+            setTimeout(() => {
+                const preloader = document.getElementById('preloader');
+                preloader.style.opacity = '0';
+                setTimeout(() => preloader.style.display = 'none', 400);
+            }, 600);
+
+            const hash = window.location.hash.replace('#', '');
+            if (hash) {
+                navigateTo(hash);
+            } else {
+                navigateTo('home');
+            }
+        });
+
+        window.addEventListener('popstate', () => {
+            const hash = window.location.hash.replace('#', '');
+            navigateTo(hash || 'home');
+        });
+
+        // Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('themeIcon');
+            const themeIconMobile = document.getElementById('themeIconMobile');
+
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                html.classList.add('light');
+                if (themeIcon) themeIcon.className = 'fa-solid fa-sun';
+                if (themeIconMobile) themeIconMobile.className = 'fa-solid fa-sun text-sm';
+                showToast('Light Mode Activated');
+            } else {
+                html.classList.remove('light');
+                html.classList.add('dark');
+                if (themeIcon) themeIcon.className = 'fa-solid fa-moon';
+                if (themeIconMobile) themeIconMobile.className = 'fa-solid fa-moon text-sm';
+                showToast('Dark Mode Activated');
+            }
+        }
+
+        // Mobile Menu Drawer
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Scroll Handlers
+        window.addEventListener('scroll', () => {
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Interactive ROI Calculator Logic
+        function calculateROI() {
+            const spend = parseInt(document.getElementById('spendSlider').value);
+            const multiplier = parseFloat(document.getElementById('industrySelect').value);
+            
+            document.getElementById('spendDisplay').textContent = `$${spend.toLocaleString()}`;
+            
+            const projectedRev = Math.round(spend * multiplier);
+            const netProfit = Math.round(projectedRev - spend);
+
+            document.getElementById('projectedRevenue').textContent = `$${projectedRev.toLocaleString()}`;
+            document.getElementById('projectedProfit').textContent = `$${netProfit.toLocaleString()} / mo`;
+        }
+
+        // Pricing Billing Toggle
+        function togglePricing() {
+            const isAnnual = document.getElementById('pricingToggle').checked;
+            document.querySelectorAll('.price-val').forEach(el => {
+                el.textContent = isAnnual ? el.getAttribute('data-annual') : el.getAttribute('data-monthly');
+            });
+        }
+
+        // Portfolio Filtering
+        function filterPortfolio(category) {
+            document.querySelectorAll('.port-filter-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-indigo', 'text-white');
+                btn.classList.add('text-slate-300');
+            });
+            event.target.classList.add('bg-brand-indigo', 'text-white');
+
+            document.querySelectorAll('.port-card').forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Blog Filter
+        function filterBlogPosts() {
+            const query = document.getElementById('blogSearchInput').value.toLowerCase();
+            document.querySelectorAll('.blog-card').forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // FAQ Accordion
+        function toggleFaq(faqId) {
+            const content = document.getElementById(faqId);
+            const icon = document.getElementById(`icon-${faqId}`);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Toast Notification System
+        function showToast(message) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = 'glass-card px-5 py-3 rounded-2xl border border-brand-indigo/50 text-white text-xs font-semibold shadow-xl flex items-center gap-3 pointer-events-auto transition-all animate-bounce';
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-brand-emerald"></i> <span>${message}</span>`;
+            
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // Modals
+        function openAuditModal() {
+            document.getElementById('auditModal').classList.remove('hidden');
+        }
+        function closeAuditModal() {
+            document.getElementById('auditModal').classList.add('hidden');
+        }
+
+        function openServiceModal(title, description) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalContent').textContent = description;
+            document.getElementById('detailModal').classList.remove('hidden');
+        }
+        function closeDetailModal() {
+            document.getElementById('detailModal').classList.add('hidden');
+        }
+
+        function readBlogModal(title, content) {
+            openServiceModal(title, content);
+        }
+
+        // Form Handlers
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast('Thank you! Strategy message received.');
+            e.target.reset();
+        }
+
+        function handleNewsletterSubmit(e) {
+            e.preventDefault();
+            showToast('Subscribed to Weekly Intel!');
+            e.target.reset();
+        }
+
+        function handleAuditSubmit(e) {
+            e.preventDefault();
+            closeAuditModal();
+            showToast('Audit Request Submitted! Check inbox shortly.');
+            e.target.reset();
+        }
+
+        // Live Chat Simulation
+        function toggleLiveChat() {
+            const chat = document.getElementById('liveChatWidget');
+            chat.classList.toggle('hidden');
+            chat.classList.toggle('flex');
+        }
+
+        function handleChatSend(e) {
+            e.preventDefault();
+            const input = document.getElementById('chatInput');
+            const msg = input.value.trim();
+            if (!msg) return;
+
+            const body = document.getElementById('chatBody');
+            
+            // User Msg
+            const userMsg = document.createElement('div');
+            userMsg.className = 'bg-brand-indigo/80 p-3 rounded-2xl rounded-tr-none max-w-[85%] text-white ml-auto text-right';
+            userMsg.textContent = msg;
+            body.appendChild(userMsg);
+
+            input.value = '';
+            body.scrollTop = body.scrollHeight;
+
+            // Bot Response Simulation
+            setTimeout(() => {
+                const botMsg = document.createElement('div');
+                botMsg.className = 'bg-white/10 p-3 rounded-2xl rounded-tl-none max-w-[85%] text-slate-200';
+                botMsg.textContent = "Thanks for reaching out! Our strategy team is standing by. Would you like to book a 15-min discovery call or request a free audit report?";
+                body.appendChild(botMsg);
+                body.scrollTop = body.scrollHeight;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
