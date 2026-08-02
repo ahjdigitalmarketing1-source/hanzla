@@ -1,0 +1,18 @@
+digital-marketing-pro/
+│
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── main.js
+└── pages/
+    ├── about.html
+    ├── services.html
+    ├── portfolio.html
+    ├── pricing.html
+    ├── blog.html
+    ├── contact.html
+    ├── faq.html
+    ├── privacy.html
+    ├── terms.html
+    └── 404.html
