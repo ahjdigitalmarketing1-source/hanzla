@@ -1,0 +1,34 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AHJ Group — AI Agent</title><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+<header><div><h1>AHJ Group</h1><p>AI Outreach Agent</p></div><span>WhatsApp Business API</span></header>
+<main>
+<section class="stats">
+{% for key,val in stats.items() %}<div class="stat"><small>{{key|upper}}</small><b>{{val}}</b></div>{% endfor %}
+</section>
+<section class="grid">
+<div class="card"><h2>Add Contact</h2>
+<form method="post" action="/contacts">
+<input name="name" placeholder="Business / customer name" required>
+<input name="phone" placeholder="+923001234567" required>
+<label><input type="checkbox" name="opted_in" value="1"> Contact has opted in</label>
+<button>Add</button></form></div>
+<div class="card"><h2>AI Agent</h2>
+<textarea id="prompt" placeholder="Example: Write a short website-services introduction for a local business."></textarea>
+<button onclick="ai()">Generate with AI</button><textarea id="out" readonly></textarea>
+</div>
+<div class="card"><h2>Automation</h2><p>The worker is ready for scheduled workflows. Sending is restricted to opted-in contacts and the official WhatsApp API.</p><div class="ok">● System architecture ready</div></div>
+</section>
+<section class="card"><h2>Contacts</h2>
+{% for c in contacts %}<div class="contact"><div><b>{{c.name}}</b><small>{{c.phone}}</small></div><span>{{"Opted-in" if c.opted_in else "Opt-in required"}}</span></div>
+{% else %}<p>No contacts yet.</p>{% endfor %}
+</section>
+</main>
+<script>
+async function ai(){
+ const p=document.getElementById('prompt').value;
+ const r=await fetch('/ai/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:p})});
+ const d=await r.json(); document.getElementById('out').value=d.result||d.error||'Error';
+}
+</script></body></html>
